@@ -1,6 +1,6 @@
 {
-    "name": "Save restricted content bot",
-    "description": "Telegram bot to save restricted content.",
+    "name": "保存限制内容bot",
+    "description": "电报机器人保存限制内容。",
     "logo": "",
     "keywords": [
         "telegram",
@@ -12,19 +12,19 @@
     "success_url": "https://t.me/DroneBots",
     "env": {
         "API_HASH": {
-            "description": "Your API HASH from my.telegram.org",
+            "description": "你的API HASH来自my.telegram.org",
             "value": "28284608"
         },
         "API_ID": {
-            "description": "Your API ID from my.telegram.org",
+            "description": "来自my.telegram.org的API ID",
             "value": "d4b80fe8a7c67a41a88e7ecb9a186f9a"
         },
         "BOT_TOKEN": {
-            "description": "Bot token, get it from @BotFather.",
+            "description": "Bot令牌，从@BotFather那里获得。",
             "value": "7431142375:AAFjhsX43NP5I5SyOkouhdecu0JKZxBi1VA"
         },
         "SESSION": {
-            "description": "Pyrogram string session.",
+            "description": "焦图字符串会话。",
             "value": "BQGvlsAAIkuDzssGRTA9GAl5OOc-81woWWs5b_H9IcsntvDNEO73Am3ApUWgxw7yUYRD8yEZ_vbf7JevrMusJZhkZWULyifBeSqtIcbF98ld9ykeyq0ezC49ejhlQIkxs3eYDR7OY_CIMFtNMtfZbelyBZ-9Y83Eo42BaEeXA0JLrt2TFXwAw0yBx0tZTWYxlFLrSzHCEwV2M7_FgqQeIvFVd-UW7TQg0SoO0HKzcuXJGcILpX8gmem9lt2w5k48TXT_ml5gUpXG6FBHn25kEbKV5k9dK02TNDdauqgAWUkCs2e_92dLIgumm2Byc3LkTQKDXsTqKC8tWurWJwp9WMaFhsauHwAAAAGs0ldtAA"
         },
         "AUTH": {
@@ -32,7 +32,7 @@
             "value": "7221482683"
         },
         "FORCESUB": {
-            "description": "Username name of public channel without using '@'.",
+            "description": "没有使用“@”的公共频道的用户名。",
             "value": "WAFORCESUB"
         }
     },
