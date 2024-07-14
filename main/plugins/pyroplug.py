@@ -23,8 +23,8 @@ def thumbnail(sender):
 async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
     
     """ userbot: PyrogramUserBot
-    client: PyrogramBotClient
-    bot: TelethonBotClient """
+        客户:PyrogramBotClient
+        机器人:TelethonBotClient """
     
     edit = ""
     chat = ""

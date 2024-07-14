@@ -2,7 +2,7 @@
 #Github.com/Vasusen-code
 
 """
-Plugin for both public & private channels!
+插件为公共和私人渠道!
 """
 
 import time, os, asyncio
