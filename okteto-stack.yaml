@@ -2,12 +2,12 @@ services:
   drone-srcb:
     build: .
     environment:
-      API_ID: $API_ID  
-      API_HASH: $API_HASH  
-      BOT_TOKEN: $BOT_TOKEN 
-      SESSION: $SESSION
-      AUTH: $AUTH
-      FORCESUB: $FORCESUB
+      API_ID: 28284608  
+      API_HASH: d4b80fe8a7c67a41a88e7ecb9a186f9a  
+      BOT_TOKEN: 7431142375:AAFjhsX43NP5I5SyOkouhdecu0JKZxBi1VA 
+      SESSION: ‘BQGvlsAAIkuDzssGRTA9GAl5OOc-81woWWs5b_H9IcsntvDNEO73Am3ApUWgxw7yUYRD8yEZ_vbf7JevrMusJZhkZWULyifBeSqtIcbF98ld9ykeyq0ezC49ejhlQIkxs3eYDR7OY_CIMFtNMtfZbelyBZ-9Y83Eo42BaEeXA0JLrt2TFXwAw0yBx0tZTWYxlFLrSzHCEwV2M7_FgqQeIvFVd-UW7TQg0SoO0HKzcuXJGcILpX8gmem9lt2w5k48TXT_ml5gUpXG6FBHn25kEbKV5k9dK02TNDdauqgAWUkCs2e_92dLIgumm2Byc3LkTQKDXsTqKC8tWurWJwp9WMaFhsauHwAAAAGs0ldtAA’
+      AUTH: 7221482683
+      FORCESUB: WAFORCESUB
     ports:
       - 8080
     resources:

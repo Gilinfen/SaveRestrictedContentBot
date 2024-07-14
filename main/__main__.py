@@ -16,8 +16,8 @@ for name in files:
         load_plugins(plugin_name.replace(".py", ""))
 
 #Don't be a thief 
-print("Successfully deployed!")
-print("By MaheshChauhan • DroneBots")
+print("成功部署!")
+# print("By MaheshChauhan • DroneBots")
 
 if __name__ == "__main__":
     bot.run_until_disconnected()

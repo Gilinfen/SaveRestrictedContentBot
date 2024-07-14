@@ -15,22 +15,22 @@ async def sett(event):
     msg = await button.get_reply_message() 
     await event.delete()
     async with Drone.conversation(event.chat_id) as conv: 
-        xx = await conv.send_message("Send me any image for thumbnail as a `reply` to this message.")
+        xx = await conv.send_message("向我发送任何图像缩略图作为“回复”这条消息。")
         x = await conv.get_reply()
         if not x.media:
-            xx.edit("No media found.")
+            xx.edit("没有找到媒体。")
         mime = x.file.mime_type
         if not 'png' in mime:
             if not 'jpg' in mime:
                 if not 'jpeg' in mime:
-                    return await xx.edit("No image found.")
+                    return await xx.edit("没有找到图像。")
         await xx.delete()
         t = await event.client.send_message(event.chat_id, 'Trying.')
         path = await event.client.download_media(x.media)
         if os.path.exists(f'{event.sender_id}.jpg'):
             os.remove(f'{event.sender_id}.jpg')
         os.rename(path, f'./{event.sender_id}.jpg')
-        await t.edit("Temporary thumbnail saved!")
+        await t.edit("临时缩略图保存!")
         
 @Drone.on(events.callbackquery.CallbackQuery(data="rem"))
 async def remt(event):  
@@ -44,6 +44,6 @@ async def remt(event):
   
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Send me Link of any message to clone it here, For private channel message, send invite link first.\n\n**SUPPORT:** @TeamDrone"
+    text = "给我链接的任何消息克隆它在这里，为私人频道消息，发送邀请链接第一。\n\n**支持:** @WananAcc"
     await start_srb(event, text)
     

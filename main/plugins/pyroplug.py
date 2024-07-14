@@ -33,7 +33,9 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
         msg_link = msg_link.split("?single")[0]
     msg_id = int(msg_link.split("/")[-1]) + int(i)
     height, width, duration, thumb_path = 90, 90, 0, None
-    if 't.me/c/' or 't.me/b/' in msg_link:
+   # 修改后  
+    print(f'msg_link: {msg_link}')
+    if ('t.me/c/' in msg_link) or ('t.me/b/' in msg_link):
         if 't.me/b/' in msg_link:
             chat = str(msg_link.split("/")[-2])
         else:
@@ -43,17 +45,17 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
             msg = await userbot.get_messages(chat, msg_id)
             if msg.media:
                 if msg.media==MessageMediaType.WEB_PAGE:
-                    edit = await client.edit_message_text(sender, edit_id, "Cloning.")
+                    edit = await client.edit_message_text(sender, edit_id, "克隆.")
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
             if not msg.media:
                 if msg.text:
-                    edit = await client.edit_message_text(sender, edit_id, "Cloning.")
+                    edit = await client.edit_message_text(sender, edit_id, "克隆.")
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
-            edit = await client.edit_message_text(sender, edit_id, "Trying to Download.")
+            edit = await client.edit_message_text(sender, edit_id, "正在下载。")
             file = await userbot.download_media(
                 msg,
                 progress=progress_for_pyrogram,
@@ -65,13 +67,13 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                 )
             )
             print(file)
-            await edit.edit('Preparing to Upload!')
+            await edit.edit('准备上传!')
             caption = None
             if msg.caption is not None:
                 caption = msg.caption
             if msg.media==MessageMediaType.VIDEO_NOTE:
                 round_message = True
-                print("Trying to get metadata")
+                print("试图获取元数据")
                 data = video_metadata(file)
                 height, width, duration = data["height"], data["width"], data["duration"]
                 print(f'd: {duration}, w: {width}, h:{height}')
@@ -93,7 +95,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                     )
                 )
             elif msg.media==MessageMediaType.VIDEO and msg.video.mime_type in ["video/mp4", "video/x-matroska"]:
-                print("Trying to get metadata")
+                print("试图获取元数据")
                 data = video_metadata(file)
                 height, width, duration = data["height"], data["width"], data["duration"]
                 print(f'd: {duration}, w: {width}, h:{height}')
@@ -143,7 +145,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                 pass
             await edit.delete()
         except (ChannelBanned, ChannelInvalid, ChannelPrivate, ChatIdInvalid, ChatInvalid):
-            await client.edit_message_text(sender, edit_id, "Have you joined the channel?")
+            await client.edit_message_text(sender, edit_id, "你加入这个频道了吗?")
             return
         except PeerIdInvalid:
             chat = msg_link.split("/")[-3]
