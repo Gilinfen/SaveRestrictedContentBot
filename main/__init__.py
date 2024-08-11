@@ -19,9 +19,19 @@ SESSION = config("SESSION", default=None)
 FORCESUB = config("FORCESUB", default=None)
 AUTH = config("AUTH", default=None, cast=int)
 
-bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+# Telethon 代理配置
+telethon_proxy = ("socks5", "127.0.0.1", 7890)  # 对应代理的类型、地址和端口
 
-userbot = Client("saverestricted", session_string=SESSION, api_hash=API_HASH, api_id=API_ID) 
+bot = TelegramClient('bot', API_ID, API_HASH,proxy=telethon_proxy).start(bot_token=BOT_TOKEN) 
+
+# 创建 Pyrogram 客户端并使用代理连接
+userbot = Client(
+    "saverestricted", 
+    session_strin=SESSION, 
+    api_hash=API_HASH, 
+    api_id=API_ID, 
+    proxy=telethon_proxy  # 添加代理配置
+)
 
 try:
     userbot.start()
@@ -33,7 +43,8 @@ Bot = Client(
     "SaveRestricted",
     bot_token=BOT_TOKEN,
     api_id=int(API_ID),
-    api_hash=API_HASH
+    api_hash=API_HASH,
+    proxy=telethon_proxy  # 添加代理配置
 )    
 
 try:
